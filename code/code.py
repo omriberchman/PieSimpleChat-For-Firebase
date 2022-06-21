@@ -16,24 +16,26 @@ layout = [
     [sg.Multiline('', size=(50, 15), reroute_cprint=True, key='-multi-')],
     [sg.InputText(key="text",justification='l'), sg.Button("send"),sg.Button("Refresh")]
     ]
-textwindow = sg.Window("PieSimpleChat - Login", layout,element_justification='c')
+textwindow = sg.Window("PieSimpleChat - Login", layout , icon='Images/icon.ico',element_justification='c')
 def read_messages(url):
     response = requests.get(url)
     data = response.json()
     return data
+
+
 
 while True:
     event,values = textwindow.read()
 
     if event == sg.WIN_CLOSED:
         break
+
     elif event == "send":
         message = values["text"]
         dict = {"name":name,"message":message,"time":time_string}
         requests.post(url,json=dict)
         sg.cprint(dict["name"],": ",dict["message"])
-        
-        
+
     elif event == "Refresh":        
         db = read_messages(url)
         for key in db.keys():
