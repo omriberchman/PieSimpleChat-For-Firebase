@@ -1,4 +1,5 @@
 
+from os import name
 import requests
 import PySimpleGUI as sg
 import tex as chat
@@ -43,13 +44,15 @@ def verify(u,p):
         info = data[key]
         user = info["user"]
         password = info["password"]
+        dn = info["display_name"]
         if user == u and password == p:
-            return True
+            return True, dn
         else:
             return False
 
 # ------------------- code -------------------
 
 login_window = main()
-if login_window == True:
-    chat.main_func()
+print(login_window)
+if login_window[0] == True:
+    chat.main_func(login_window[1])
