@@ -40,6 +40,7 @@ def verify(u,p):
     response = requests.get(url)
     data = response.json()
     name = "placeholder"
+    print(data)
     for key in data.keys():
         info = data[key]
         user = info["user"]
@@ -47,8 +48,7 @@ def verify(u,p):
         dn = info["display_name"]
         if user == u and password == p:
             return True, dn
-        else:
-            return False
+    return False
 
 # ------------------- code -------------------
 
