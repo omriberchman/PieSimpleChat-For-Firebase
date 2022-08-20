@@ -36,7 +36,7 @@ def open_window():
     
 #verify user and password input
 def verify(u,p):
-    url = "https://maadaniya-870cb-default-rtdb.europe-west1.firebasedatabase.app/users.json"
+    url = "~~INSERT USERS DATABASE~~"
     response = requests.get(url)
     data = response.json()
     name = "placeholder"
