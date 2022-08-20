@@ -5,7 +5,7 @@ def main_func(name):
     import time
 
 
-    url = "https://maadaniya-870cb-default-rtdb.europe-west1.firebasedatabase.app/messages.json"
+    url = "~~INSERT CHAT DATA BASE~~"
     sg.theme('Dark Red')
     named_tuple = time.localtime() # get struct_time
     time_string = time.strftime("%m/%d/%Y, %H:%M:%S", named_tuple) #need to use time_string
