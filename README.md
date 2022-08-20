@@ -4,4 +4,6 @@ PieSimpleChat is a basic and pretty stoopid chat application
 
 
 Full code is available here cuz we don't have budget for a compiler so please don't use it for bad causes because we have nothing to do  
-**\*note\*** You need to connect your own Firebase database.
+**\*note\*** You need to connect your own Firebase database.  
+username / password DB in final.py line 39  
+Chat DB in tex.py line 8
